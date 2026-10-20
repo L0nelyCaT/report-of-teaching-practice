@@ -190,97 +190,117 @@
       <div class="bc"><a onclick="go('home')">หน้าแรก</a><span class="sep">›</span><span>ตารางสอน</span></div>
       <div class="sec-header">
         <div class="ico">📅</div>
-        <h2>ตารางสอน (ภาคเรียนที่ 1/2569)</h2>
+        <h2>ตารางสอน</h2>
       </div>
       <div class="tabs">
         <button class="tab-btn active" onclick="semTab('timetable',1,this)">ภาคเรียนที่ 1</button>
-        <button class="tab-btn active" onclick="semTab('timetable',2,this)">ภาคเรียนที่ 2</button>
+        <button class="tab-btn" onclick="semTab('timetable',2,this)">ภาคเรียนที่ 2</button>
       </div>
       <div class="sem-content active" id="timetable-1">
         <div class="table-wrap">
           <table>
+            <colgroup>
+              <col style="width: 72px;">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+            </colgroup>
             <thead>
               <tr>
-                <th>คาบ / เวลา</th>
-                <th>จันทร์</th>
-                <th>อังคาร</th>
-                <th>พุธ</th>
-                <th>พฤหัสบดี</th>
-                <th>ศุกร์</th>
+                <th rowspan="2" style="vertical-align: middle;">วัน</th>
+                <th>08:00–09:00</th>
+                <th>09:00–10:00</th>
+                <th>10:00–11:00</th>
+                <th>11:00–12:00</th>
+                <th>12:00–13:00</th>
+                <th>13:00–14:00</th>
+                <th>14:00–15:00</th>
+                <th>15:00–16:00</th>
+                <th>16:00–17:00</th>
+              </tr>
+              <tr>
+                <th>คาบ 1</th>
+                <th>คาบ 2</th>
+                <th>คาบ 3</th>
+                <th>คาบ 4</th>
+                <th>คาบ 5</th>
+                <th>คาบ 6</th>
+                <th>คาบ 7</th>
+                <th>คาบ 8</th>
+                <th>คาบ 9</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>08:00–09:00</td>
-                <td>31909-1004<br><small>2สทค1-2</small></td>
-                <td>21909-1007<br><small>2ชทค1</small></td>
-                <td>21909-1007<br><small>2ชทค2</small></td>
-                <td>31905-2016<br><small>2สคอ1</small></td>
+                <td style="font-weight: 700; background: var(--gray-100);">จันทร์</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-1004</strong><br><small style="color: #4b5563;">2สทค1-2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-1004</strong><br><small style="color: #4b5563;">2สทค1-2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-1004</strong><br><small style="color: #4b5563;">2สทค1-2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-1004</strong><br><small style="color: #4b5563;">2สทค1-2</small></td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
                 <td>—</td>
               </tr>
               <tr>
-                <td>09:00–10:00</td>
-                <td>31909-1004<br><small>2สทค1-2</small></td>
-                <td>21909-1007<br><small>2ชทค1</small></td>
-                <td>21909-1007<br><small>2ชทค2</small></td>
-                <td>31905-2016<br><small>2สคอ1</small></td>
+                <td style="font-weight: 700; background: var(--gray-100);">อังคาร</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค1</small></td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
                 <td>—</td>
               </tr>
               <tr>
-                <td>10:00–11:00</td>
-                <td>31909-1004<br><small>2สทค1-2</small></td>
-                <td>21909-1007<br><small>2ชทค1</small></td>
-                <td>21909-1007<br><small>2ชทค2</small></td>
-                <td>31905-2016<br><small>2สคอ1</small></td>
-                <td>—</td>
+                <td style="font-weight: 700; background: var(--gray-100);">พุธ</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1007</strong><br><small style="color: #4b5563;">2ชทค2</small></td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-0002</strong><br><small style="color: #4b5563;">1สทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-0002</strong><br><small style="color: #4b5563;">1สทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-0002</strong><br><small style="color: #4b5563;">1สทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31909-0002</strong><br><small style="color: #4b5563;">1สทค2</small></td>
               </tr>
               <tr>
-                <td>11:00–12:00</td>
-                <td>31909-1004<br><small>2สทค1-2</small></td>
-                <td>21909-1007<br><small>2ชทค1</small></td>
-                <td>21909-1007<br><small>2ชทค2</small></td>
-                <td>31905-2016<br><small>2สคอ1</small></td>
+                <td style="font-weight: 700; background: var(--gray-100);">พฤหัสบดี</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สคอ1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สคอ1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สคอ1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สคอ1</small></td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
+                <td colspan="2" style="background: #fce4e1; color: #922b21; font-weight: 600;">กิจกรรม</td>
                 <td>—</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สคอ1</small></td>
               </tr>
               <tr>
-                <td>12:00–13:00</td>
-                <td colspan="5" style="background:#fff3cd;">พักกลางวัน</td>
-              </tr>
-              <tr>
-                <td>13:00–14:00</td>
+                <td style="font-weight: 700; background: var(--gray-100);">ศุกร์</td>
                 <td>—</td>
                 <td>—</td>
-                <td>31909-0002<br><small>1สทค2</small></td>
-                <td rowspan="3" style="background:#fce4e1;">กิจกรรม</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td>14:00–15:00</td>
                 <td>—</td>
                 <td>—</td>
-                <td>31909-0002<br><small>1สทค2</small></td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td>15:00–16:00</td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
                 <td>—</td>
                 <td>—</td>
-                <td>31909-0002<br><small>1สทค2</small></td>
                 <td>—</td>
-              </tr>
-              <tr>
-                <td>16:00–17:00</td>
-                <td>—</td>
-                <td>—</td>
-                <td>31909-0002<br><small>1สทค2</small></td>
-                <td>31905-2016<br><small>2สคอ1</small></td>
                 <td>—</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="info-card">
-          <div class="info-card-header">📚 รายวิชาที่ฝึกสอน</div>
+          <div class="info-card-header">📚 รายวิชาที่ฝึกสอน (ภาคเรียนที่ 1/2569)</div>
           <div class="info-card-body">
             <div class="info-row">
               <span class="lbl">รหัสวิชา</span><span class="val">21909-1007</span>
@@ -294,9 +314,150 @@
             </div>
           </div>
         </div>
+        <div class="doc-list" style="margin-top: 16px;">
+          <a class="doc-item" href="timetable/Term1/ตารางสอน.xlsx" download>
+            <div class="doc-ico">📊</div>
+            <div>
+              <div class="doc-title">ดาวน์โหลดตารางสอน (Excel) - ภาคเรียนที่ 1</div>
+              <div class="doc-sub">XLSX · ตารางสอน.xlsx</div>
+            </div><span class="doc-arr">›</span>
+          </a>
+        </div>
       </div>
       <div class="sem-content" id="timetable-2">
-        <p>อยู่ระหว่างรอข้อมูลตารางเรียนภาคเรียนที่ 2</p>
+        <div class="table-wrap">
+          <table>
+            <colgroup>
+              <col style="width: 72px;">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+              <col style="width: calc((100% - 72px) / 9);">
+            </colgroup>
+            <thead>
+              <tr>
+                <th rowspan="2" style="vertical-align: middle;">วัน</th>
+                <th>08:00–09:00</th>
+                <th>09:00–10:00</th>
+                <th>10:00–11:00</th>
+                <th>11:00–12:00</th>
+                <th>12:00–13:00</th>
+                <th>13:00–14:00</th>
+                <th>14:00–15:00</th>
+                <th>15:00–16:00</th>
+                <th>16:00–17:00</th>
+              </tr>
+              <tr>
+                <th>คาบ 1</th>
+                <th>คาบ 2</th>
+                <th>คาบ 3</th>
+                <th>คาบ 4</th>
+                <th>คาบ 5</th>
+                <th>คาบ 6</th>
+                <th>คาบ 7</th>
+                <th>คาบ 8</th>
+                <th>คาบ 9</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 700; background: var(--gray-100);">จันทร์</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2015</strong><br><small style="color: #4b5563;">1สทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2015</strong><br><small style="color: #4b5563;">1สทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2015</strong><br><small style="color: #4b5563;">1สทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2015</strong><br><small style="color: #4b5563;">1สทค1</small></td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; background: var(--gray-100);">อังคาร</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31900-1003</strong><br><small style="color: #4b5563;">1สคอ1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31900-1003</strong><br><small style="color: #4b5563;">1สคอ1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31900-1003</strong><br><small style="color: #4b5563;">1สคอ1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31900-1003</strong><br><small style="color: #4b5563;">1สคอ1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31900-1003</strong><br><small style="color: #4b5563;">1สคอ1</small></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; background: var(--gray-100);">พุธ</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>31905-2016</strong><br><small style="color: #4b5563;">2สทค1</small></td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; background: var(--gray-100);">พฤหัสบดี</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
+                <td colspan="2" style="background: #fce4e1; color: #922b21; font-weight: 600;">กิจกรรม</td>
+                <td>—</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; background: var(--gray-100);">ศุกร์</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค1</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค1</small></td>
+                <td style="background: #fff3cd; color: #856404; font-weight: 600;">พักกลางวัน</td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค2</small></td>
+                <td style="background: #eaf2fd; color: #1e40af;"><strong>21909-1005</strong><br><small style="color: #4b5563;">1ชทค2</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-card">
+          <div class="info-card-header">📚 รายวิชาที่ฝึกสอน (ภาคเรียนที่ 2/2569)</div>
+          <div class="info-card-body">
+            <div class="info-row">
+              <span class="lbl">รหัสวิชา</span><span class="val">31905-2015</span>
+              <span class="lbl">ชื่อวิชา</span><span class="val">การออกแบบมัลติมีเดียเชิงปฏิสัมพันธ์</span>
+              <span class="lbl">รหัสวิชา</span><span class="val">31900-1003</span>
+              <span class="lbl">ชื่อวิชา</span><span class="val">การสร้างสื่อดิจิทัล</span>
+              <span class="lbl">รหัสวิชา</span><span class="val">31905-2016</span>
+              <span class="lbl">ชื่อวิชา</span><span class="val">การตัดต่อภาพวิดีทัศน์ดิจิทัลและวิชวลเอฟเฟค</span>
+              <span class="lbl">รหัสวิชา</span><span class="val">21909-1005</span>
+              <span class="lbl">ชื่อวิชา</span><span class="val">พื้นฐานการเขียนโปรแกรมคอมพิวเตอร์</span>
+            </div>
+          </div>
+        </div>
+        <div class="doc-list" style="margin-top: 16px;">
+          <a class="doc-item" href="timetable/Term2/ตารางสอน.pdf" target="_blank">
+            <div class="doc-ico">📄</div>
+            <div>
+              <div class="doc-title">ดูไฟล์ตารางสอน (PDF) - ครูฝึกสอน 1</div>
+              <div class="doc-sub">PDF · ตารางสอน.pdf</div>
+            </div><span class="doc-arr">›</span>
+          </a>
+          <a class="doc-item" href="timetable/Term2/ตารางสอน.xlsx" download>
+            <div class="doc-ico">📊</div>
+            <div>
+              <div class="doc-title">ดาวน์โหลดตารางสอน (Excel) - ภาคเรียนที่ 2</div>
+              <div class="doc-sub">XLSX · ตารางสอน.xlsx</div>
+            </div><span class="doc-arr">›</span>
+          </a>
+        </div>
       </div>
     </section>
 
