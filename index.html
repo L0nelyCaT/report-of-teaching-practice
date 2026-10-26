@@ -123,26 +123,219 @@
     </section>
 
     <section class="section" id="sec-school">
-      <div class="bc"><a onclick="go('home')">หน้าแรก</a><span class="sep">›</span><span>สถานศึกษา</span></div>
+      <div class="bc"><a onclick="go('home')">หน้าแรก</a><span class="sep">›</span><span>สถานฝึกสอน</span></div>
       <div class="sec-header">
         <div class="ico">🏫</div>
-        <h2>สถานศึกษา</h2>
+        <h2>สถานฝึกสอน</h2>
       </div>
 
-      <div class="school-hero">
-        <img src="images/school_info.png" alt="สถานที่ฝึกปฏิบัติการสอน" />
-      </div>
-
-      <div class="info-card">
-        <div class="info-card-header">ข้อมูลสถานศึกษา</div>
-        <div class="info-card-body">
-          <div class="info-row">
-            <span class="lbl">ชื่อสถานศึกษา</span><span class="val">วิทยาลัยเทคนิคลพบุรี</span>
-            <span class="lbl">แผนกวิชา</span><span class="val">เทคโนโลยีคอมพิวเตอร์</span>
-            <span class="lbl">ระยะเวลา</span><span class="val">5 พฤษภาคม 2569 – 15 มีนาคม 2570</span>
-            <span class="lbl">วันเวลาปฏิบัติงาน</span><span class="val">จันทร์ – ศุกร์ เวลา 07.30 – 16.30 น.</span>
+      <!-- 1. School Banner & Hero -->
+      <div class="school-banner">
+        <img src="images/school_front.png" alt="วิทยาลัยเทคนิคลพบุรี" class="school-banner-img zoomable" onclick="openModal('images/school_front.png', 'ป้ายด้านหน้าวิทยาลัยเทคนิคลพบุรี')" />
+        <div class="school-banner-content">
+          <div class="school-badge">🏛️ สถานศึกษาฝึกประสบการณ์วิชาชีพครู</div>
+          <h1 class="school-title">วิทยาลัยเทคนิคลพบุรี</h1>
+          <div class="school-sub">Lopburi Technical College · สถาบันการอาชีวศึกษาภาคกลาง 2</div>
+          <div class="school-desc">
+            สังกัดสำนักงานคณะกรรมการการอาชีวศึกษา กระทรวงศึกษาธิการ<br>
+            เลขที่ 323 ถนนนารายณ์มหาราช ตำบลทะเลชุบศร อำเภอเมืองลพบุรี จังหวัดลพบุรี 15000
+          </div>
+          <div class="school-tag-list">
+            <span class="school-tag">🏷️ รหัสสถานศึกษา: 1316016101</span>
+            <span class="school-tag">💻 แผนกวิชาเทคโนโลยีคอมพิวเตอร์</span>
+            <span class="school-tag">📅 ปีการศึกษา 2569 – 2570</span>
           </div>
         </div>
+      </div>
+
+      <!-- เอกสารข้อมูลพื้นฐานสถานศึกษา (Basic Information Document) -->
+      <div style="margin-bottom: 24px; background: var(--white); border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 48px; height: 48px; background: #fee2e2; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">📄</div>
+          <div>
+            <div style="font-weight: 700; color: var(--gray-900); font-size: 15px; margin-bottom: 3px;">ข้อมูลพื้นฐานสถานศึกษา.pdf</div>
+            <div style="font-size: 13px; color: var(--gray-500);">เอกสารข้อมูลพื้นฐาน ประวัติความเป็นมา และโครงสร้างวิทยาลัยเทคนิคลพบุรี</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn-red" style="padding: 8px 18px; font-size: 13px;" onclick="openModal('images/school_history_full.png', 'เอกสารข้อมูลพื้นฐานและประวัติความเป็นมา วิทยาลัยเทคนิคลพบุรี')">👁️ ดูเอกสาร</button>
+          <a href="images/school_history_full.png" download="ข้อมูลพื้นฐาน_วิทยาลัยเทคนิคลพบุรี.png" class="tab-btn" style="padding: 8px 18px; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">📥 ดาวน์โหลด</a>
+        </div>
+      </div>
+
+      <!-- 2. ข้อมูลสถานศึกษา -->
+      <div class="info-card">
+        <div class="info-card-header">📋 ข้อมูลพื้นฐานสถานศึกษา</div>
+        <div class="info-card-body">
+          <div class="info-row">
+            <span class="lbl">ชื่อสถานศึกษา</span><span class="val">วิทยาลัยเทคนิคลพบุรี (Lopburi Technical College)</span>
+            <span class="lbl">รหัสสถานศึกษา</span><span class="val">1316016101</span>
+            <span class="lbl">สังกัด</span><span class="val">สถาบันการอาชีวศึกษาภาคกลาง 2 · สำนักงานคณะกรรมการการอาชีวศึกษา กระทรวงศึกษาธิการ</span>
+            <span class="lbl">ที่ตั้ง</span><span class="val">323 ถนนนารายณ์มหาราช ตำบลทะเลชุบศร อำเภอเมืองลพบุรี จังหวัดลพบุรี 15000</span>
+            <span class="lbl">แผนกวิชา</span><span class="val">เทคโนโลยีคอมพิวเตอร์</span>
+            <span class="lbl">ระยะเวลาฝึกสอน</span><span class="val">5 พฤษภาคม 2569 – 15 มีนาคม 2570</span>
+            <span class="lbl">วันเวลาปฏิบัติงาน</span><span class="val">จันทร์ – ศุกร์ เวลา 07.30 – 16.30 น.</span>
+            <span class="lbl">เว็บไซต์</span><span class="val"><a href="http://www.lbtech.ac.th" target="_blank" style="color: var(--red); font-weight: 600; text-decoration: none;">http://www.lbtech.ac.th</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ประวัติความเป็นมา -->
+      <div class="history-card">
+        <div class="history-card-header">
+          <span>📜</span>
+          <span>ประวัติความเป็นมา วิทยาลัยเทคนิคลพบุรี</span>
+        </div>
+        <div class="history-card-body">
+          <p>
+            วิทยาลัยเทคนิคลพบุรี จัดตั้งขึ้นเมื่อวันที่ 1 ตุลาคม 2510 โดยรวม 3 สถาบันเข้าด้วยกันคือ โรงเรียนช่างกลลพบุรี จัดตั้งขึ้นเมื่อวันที่ 10 พฤษภาคม 2500 ในโรงเรียนโคกกะเทียมวิทยาลัย ต่อมาได้แยกออกมา โรงเรียนโคกกะเทียม ไปรวมกับแผนกช่างยนต์ ของโรงเรียนการช่างลพบุรี ปัจจุบันมีเนื้อที่ 18 ไร่เศษ ใช้ชื่อว่า “โรงเรียนช่างกลลพบุรี”
+          </p>
+          <p>
+            โรงเรียนการช่างลพบุรี ชื่อเดิมว่าโรงเรียนช่างไม้ ตั้งขึ้นเมื่อวันที่ 2 มกราคม 2481 ที่ถนนพระยากำจัด อำเภอเมือง จังหวัดลพบุรี มีเนื้อที่ 6 ไร่ 2 งาน 16 ตารางวา เปิดสอนทั้งระดับประถมมัธยม อาชีวศึกษาตอนต้น และระดับอาชีวศึกษาตอนปลาย ในวิชาช่างไม้ ช่างทาสีน้ำมัน และช่างยนต์
+          </p>
+          <p>
+            โรงเรียนการช่างสตรีลพบุรี ตั้งขึ้นเมื่อวันที่ 21 ตุลาคม 2496 ที่วิทยาลัยเทคนิคลพบุรี ปัจจุบัน เปิดสอนในระดับอาชีวศึกษาตอนปลายในปี พ.ศ. 2498 โรงเรียนการช่างสตรีบ้านหมี่ได้ย้ายจากบ้านหมี่มารวมเข้าด้วยกัน และขยายการเรียนถึงประโยคอาชีวศึกษาขั้นสูง เปิดสอนในแผนกผ้าและเครื่องแต่งกาย แผนกอาหารและโภชนาการ และแผนกหัตถกรรม
+          </p>
+          <p>
+            ทั้ง 3 โรงรวมเป็นโรงเรียนเดียวกันใช้ชื่อว่า “โรงเรียนเทคนิคลพบุรี” เนื้อที่ประมาณ 47 ไร่ 2 งาน 19 ตารางวา ซึ่งเป็นเนื้อที่รวมระหว่างโรงเรียนช่างกลลพบุรีกับโรงเรียนการช่างลพบุรี ตั้งอยู่ริมถนนนารายณ์มหาราช ตำบลทะเลชุบศร อำเภอเมือง จังหวัดลพบุรี ตรงข้ามกับศูนย์สงครามพิเศษ ติดกับมหาวิทยาลัยราชภัฏเทพสตรี เปิดสอนในระดับ ปวช. พ.ศ. 2519 เปิดสอนระดับ ปวส. เปลี่ยนชื่อเป็น “วิทยาลัยอาชีวศึกษาลพบุรี” ต่อมาได้เปลี่ยนใหม่อีกเป็น “วิทยาลัยเทคนิคลพบุรี” เมื่อ พ.ศ. 2522 ปัจจุบันมีนักเรียนนักศึกษาประมาณ 5,000 คน
+          </p>
+        </div>
+      </div>
+
+      <!-- 4. คณะผู้บริหารสถานศึกษา -->
+      <div class="sec-header" style="margin-top: 32px;">
+        <div class="ico">👥</div>
+        <h2>คณะผู้บริหารสถานศึกษา</h2>
+      </div>
+
+      <div class="board-preview-card">
+        <div class="board-header">
+          <div class="board-title">
+            <span>🏛️</span>
+            <span>ทำเนียบคณะผู้บริหาร วิทยาลัยเทคนิคลพบุรี (4 คน)</span>
+          </div>
+          <span class="roster-badge red">ผู้บริหารสถานศึกษา</span>
+        </div>
+        <div class="board-img-wrap">
+          <img src="images/executives_board.png" alt="คณะผู้บริหารสถานศึกษา วิทยาลัยเทคนิคลพบุรี" class="zoomable" onclick="openModal('images/executives_board.png', 'คณะผู้บริหารสถานศึกษา วิทยาลัยเทคนิคลพบุรี (4 คน)')" />
+        </div>
+      </div>
+
+      <div class="roster-grid">
+        <div class="roster-card director">
+          <span class="roster-badge red">ผู้อำนวยการ</span>
+          <div class="roster-name">นายประสงค์ อุบลวัตร</div>
+          <div class="roster-role">ผู้บริหาร เชี่ยวชาญ · ผู้อำนวยการ วิทยาลัยเทคนิคลพบุรี</div>
+        </div>
+        <div class="roster-card deputy">
+          <span class="roster-badge blue">รองผู้อำนวยการ</span>
+          <div class="roster-name">นางพนา จันทร์ศิริ</div>
+          <div class="roster-role">ครู ชำนาญการพิเศษ · รองผู้อำนวยการ ฝ่ายวิชาการ<br>หัวหน้างาน งานพัฒนาหลักสูตรและการจัดการเรียนรู้</div>
+        </div>
+        <div class="roster-card deputy">
+          <span class="roster-badge blue">รองผู้อำนวยการ</span>
+          <div class="roster-name">นายสุทธิพงษ์ ชูเชื้อ</div>
+          <div class="roster-role">ผู้บริหาร ชำนาญการพิเศษ · รองผู้อำนวยการ ฝ่ายบริหารทรัพยากร</div>
+        </div>
+        <div class="roster-card deputy">
+          <span class="roster-badge blue">รองผู้อำนวยการ</span>
+          <div class="roster-name">นางสาวกัลยา สิงหาเขต</div>
+          <div class="roster-role">ผู้บริหาร ชำนาญการพิเศษ · รองผู้อำนวยการ ฝ่ายยุทธศาสตร์และแผนงาน<br>รองผู้อำนวยการ ฝ่ายกิจการนักเรียน นักศึกษา</div>
+        </div>
+      </div>
+
+      <!-- 5. คณะครู แผนกวิชาเทคโนโลยีคอมพิวเตอร์ -->
+      <div class="sec-header" style="margin-top: 32px;">
+        <div class="ico">👨‍🏫</div>
+        <h2>คณะครู แผนกวิชาเทคโนโลยีคอมพิวเตอร์</h2>
+      </div>
+      <p style="font-size: 14px; color: var(--gray-700); margin-bottom: 16px;">
+        มีคณะครูและบุคลากรในแผนกวิชาเทคโนโลยีคอมพิวเตอร์ รวม <strong>10 คน</strong> ประกอบด้วย:
+      </p>
+
+      <div class="board-preview-card">
+        <div class="board-header">
+          <div class="board-title">
+            <span>💻</span>
+            <span>หัวหน้าแผนก และ คณะครูประจำ (5 คน)</span>
+          </div>
+          <span class="roster-badge green">ครูประจำ</span>
+        </div>
+        <div class="board-img-wrap">
+          <img src="images/teachers_head_regular.png" alt="หัวหน้าแผนกและครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์" class="zoomable" onclick="openModal('images/teachers_head_regular.png', 'หัวหน้าแผนกและคณะครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+        </div>
+      </div>
+
+      <div class="board-preview-card">
+        <div class="board-header">
+          <div class="board-title">
+            <span>🎓</span>
+            <span>คณะครูพิเศษสอน (5 คน)</span>
+          </div>
+          <span class="roster-badge amber">ครูพิเศษสอน</span>
+        </div>
+        <div class="board-img-wrap">
+          <img src="images/teachers_special.png" alt="คณะครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์" class="zoomable" onclick="openModal('images/teachers_special.png', 'คณะครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+        </div>
+      </div>
+
+      <div class="roster-grid">
+        <div class="roster-card director">
+          <span class="roster-badge red">หัวหน้าแผนก</span>
+          <div class="roster-name">นายรณภูมิ นาคสมบูรณ์</div>
+          <div class="roster-role">ครู · หัวหน้าแผนกวิชาเทคโนโลยีคอมพิวเตอร์<br>ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์ (ครูพี่เลี้ยง)</div>
+        </div>
+        <div class="roster-card teacher">
+          <span class="roster-badge green">ครูประจำ</span>
+          <div class="roster-name">นายจิตวัฒน์ เป็นวงษ์</div>
+          <div class="roster-role">ครู ชำนาญการพิเศษ · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card teacher">
+          <span class="roster-badge green">ครูประจำ</span>
+          <div class="roster-name">นางสาวศิริพิไลย พรหมแพทย์</div>
+          <div class="roster-role">ครู ชำนาญการพิเศษ · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card teacher">
+          <span class="roster-badge green">ครูประจำ</span>
+          <div class="roster-name">นายไพบูลย์ สมนึก</div>
+          <div class="roster-role">ครู ชำนาญการ · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card teacher">
+          <span class="roster-badge green">ครูประจำ</span>
+          <div class="roster-name">นางสาวรจนาถ มูลตรีแก้ว</div>
+          <div class="roster-role">ครูผู้ช่วย · ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card special">
+          <span class="roster-badge amber">ครูพิเศษสอน</span>
+          <div class="roster-name">นายเมธาวี ภูโต</div>
+          <div class="roster-role">ครูพิเศษสอน · ลูกจ้างชั่วคราว แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card special">
+          <span class="roster-badge amber">ครูพิเศษสอน</span>
+          <div class="roster-name">นายอนุชา ดำรงค์สกุล</div>
+          <div class="roster-role">ครูผู้ช่วย · ครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card special">
+          <span class="roster-badge amber">ครูพิเศษสอน</span>
+          <div class="roster-name">นางสาวรพีพร ชูสุวรรณ</div>
+          <div class="roster-role">ครูพิเศษสอน · ลูกจ้างชั่วคราว แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card special">
+          <span class="roster-badge amber">ครูพิเศษสอน</span>
+          <div class="roster-name">นายธนกฤต จำปาทอง</div>
+          <div class="roster-role">ครู · ครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+        <div class="roster-card special">
+          <span class="roster-badge amber">ครูพิเศษสอน</span>
+          <div class="roster-name">นางสาวกฤษณา เยี่ยมญาติ</div>
+          <div class="roster-role">ครูพิเศษสอน · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+        </div>
+      </div>
+
+      <!-- 6. ครูพี่เลี้ยงและนักศึกษาฝึกสอน -->
+      <div class="sec-header" style="margin-top: 32px;">
+        <div class="ico">🤝</div>
+        <h2>ครูพี่เลี้ยงและนักศึกษาฝึกสอน</h2>
       </div>
 
       <div class="profile-grid">
@@ -150,7 +343,7 @@
           <div class="profile-card-header">👨‍🏫 ครูพี่เลี้ยง</div>
           <div class="profile-card-body">
             <div class="profile-photo">
-              <img src="images/ครูพี่เลี้ยง.png" alt="ครูพี่เลี้ยง" />
+              <img src="images/ครูพี่เลี้ยง.png" alt="ครูพี่เลี้ยง" class="zoomable" onclick="openModal('images/ครูพี่เลี้ยง.png', 'นายรณภูมิ นาคสมบูรณ์ (ครูพี่เลี้ยง)')" />
             </div>
             <div class="profile-info">
               <div class="profile-name">นายรณภูมิ นาคสมบูรณ์</div>
@@ -166,23 +359,157 @@
           <div class="profile-card-header">🎓 นักศึกษาฝึกสอน</div>
           <div class="profile-card-body">
             <div class="profile-photo">
-              <img src="images/รูปชุดนศ.png" alt="นักศึกษา" />
+              <img src="images/รูปชุดนศ.png" alt="นักศึกษา" class="zoomable" onclick="openModal('images/รูปชุดนศ.png', 'นายณัฐภาส เงินห้อย (นักศึกษาฝึกสอน)')" />
             </div>
             <div class="profile-info">
               <div class="profile-name">นายณัฐภาส เงินห้อย</div>
               <div class="profile-detail">
-                นักศึกษาระดับปริญญาตรี (TCT)<br>
+                นักศึกษาระดับปริญญาตรี (TCT34)<br>
                 ภาควิชาคอมพิวเตอร์ศึกษา<br>
                 คณะครุศาสตร์อุตสาหกรรม<br>
-                มจพ. (KMUTNB)
+                มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (KMUTNB)
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 7. แผนที่และการติดต่อสถานฝึกสอน -->
+      <div class="sec-header" style="margin-top: 32px;">
+        <div class="ico">📍</div>
+        <h2>แผนที่และการติดต่อสถานฝึกสอน</h2>
+      </div>
+
+      <div class="map-contact-grid">
+        <div class="map-frame-card">
+          <iframe 
+            src="https://maps.google.com/maps?q=14.80164,100.65338&hl=th&z=16&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="แผนที่วิทยาลัยเทคนิคลพบุรี">
+          </iframe>
+        </div>
+        <div class="contact-detail-card">
+          <div class="contact-detail-header">
+            <span>📮</span>
+            <span>ข้อมูลการติดต่อ วิทยาลัยเทคนิคลพบุรี</span>
+          </div>
+          <div class="contact-detail-body">
+            <div class="contact-item">
+              <div class="contact-icon">🏛️</div>
+              <div class="contact-text">
+                <strong>หน่วยงาน</strong>
+                <span>สถาบันการอาชีวศึกษาภาคกลาง 2 วิทยาลัยเทคนิคลพบุรี<br><em>(Lopburi Technical College)</em></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-text">
+                <strong>ที่อยู่ (Address)</strong>
+                <span>เลขที่ 323 ถนนนารายณ์มหาราช ตำบลทะเลชุบศร อำเภอเมืองลพบุรี จังหวัดลพบุรี 15000<br>
+                <small style="color: var(--gray-500);">323 Narai Maharach Rd, Thale Chup Sorn, Mueang Lop Buri District, Lopburi Province 15000 Thailand</small></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div class="contact-text">
+                <strong>โทรศัพท์</strong>
+                <span><a href="tel:036411042">0-3641-1042</a> , <a href="tel:036411072">0-3641-1072</a></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📠</div>
+              <div class="contact-text">
+                <strong>โทรสาร (Fax)</strong>
+                <span>0-3641-1042</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-text">
+                <strong>อีเมล (Email)</strong>
+                <span><a href="mailto:Saraban@lbtech.ac.th">Saraban@lbtech.ac.th</a></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🌐</div>
+              <div class="contact-text">
+                <strong>เว็บไซต์ (Website)</strong>
+                <span><a href="http://www.lbtech.ac.th" target="_blank">www.lbtech.ac.th</a></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📘</div>
+              <div class="contact-text">
+                <strong>Facebook</strong>
+                <span><a href="https://www.facebook.com/lbtechlopburi/" target="_blank">facebook.com/lbtechlopburi</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. ข้อมูลสถานที่ตั้งและเวลาทำการ (Dual Cards) -->
+      <div class="dual-location-grid">
+        <div class="location-card school">
+          <div class="location-card-header">
+            <span>🏫</span>
+            <span>สถานฝึกสอน (สถานที่ปฏิบัติการสอน)</span>
+          </div>
+          <div class="location-card-body">
+            <div class="loc-row">
+              <span class="loc-lbl">ตั้งอยู่ใน:</span>
+              <span class="loc-val"><strong>วิทยาลัยเทคนิคลพบุรี (Lopburi Technical College)</strong><br><small style="color: var(--gray-500);">สถาบันการอาชีวศึกษาภาคกลาง 2</small></span>
+            </div>
+            <div class="loc-row">
+              <span class="loc-lbl">ที่อยู่:</span>
+              <span class="loc-val">เลขที่ 323 ถนนนารายณ์มหาราช ต.ทะเลชุบศร อ.เมือง จ.ลพบุรี 15000</span>
+            </div>
+            <div class="loc-row">
+              <span class="loc-lbl">โทรศัพท์:</span>
+              <span class="loc-val"><a href="tel:036411042" style="color: inherit; text-decoration: none;">036 411 042</a></span>
+            </div>
+            <div class="loc-row">
+              <span class="loc-lbl">เวลาทำการ:</span>
+              <span class="loc-val"><span class="loc-hours">🟢 เปิด ⋅ ปิด 16:30 น. (จันทร์ – ศุกร์)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-card kmutnb">
+          <div class="location-card-header">
+            <span>🎓</span>
+            <span>สถาบันการศึกษาต้นสังกัด</span>
+          </div>
+          <div class="location-card-body">
+            <div class="loc-row">
+              <span class="loc-lbl">ตั้งอยู่ใน:</span>
+              <span class="loc-val"><strong>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (มจพ.)</strong><br><small style="color: var(--gray-500);">ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม</small></span>
+            </div>
+            <div class="loc-row">
+              <span class="loc-lbl">ที่อยู่:</span>
+              <span class="loc-val">1518 ถนนพิบูลสงคราม แขวงวงศ์สว่าง เขตบางซื่อ กรุงเทพมหานคร 10800</span>
+            </div>
+            <div class="loc-row">
+              <span class="loc-lbl">โทรศัพท์:</span>
+              <span class="loc-val"><a href="tel:025552000" style="color: inherit; text-decoration: none;">02 555 2000 ต่อ 3234</a></span>
+            </div>
+            <div class="loc-row">
+              <span class="loc-lbl">เวลาทำการ:</span>
+              <span class="loc-val"><span class="loc-hours">🟢 เปิด ⋅ ปิด 16:30 น. (จันทร์ – ศุกร์)</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. รายวิชาที่สอน -->
+      <div class="sec-header" style="margin-top: 32px;">
+        <div class="ico">📚</div>
+        <h2>รายวิชาที่ได้รับมอบหมายให้ปฏิบัติการสอน</h2>
+      </div>
+
       <div class="subject-card">
-        <img src="images/subject.png" alt="รายวิชา" />
+        <img src="images/subject.png" alt="รายวิชาที่ได้รับมอบหมาย" class="zoomable" onclick="openModal('images/subject.png', 'รายวิชาที่ได้รับมอบหมายให้ปฏิบัติการสอน')" />
       </div>
     </section>
 
@@ -697,6 +1024,13 @@
 
   </main>
 
+    <!-- Image Lightbox Modal -->
+  <div id="imgModal" class="img-modal" onclick="closeModal()">
+    <button class="modal-close-btn" onclick="closeModal()" title="ปิด">&times;</button>
+    <img id="modalImg" class="modal-content" src="" alt="ขยายภาพ" onclick="event.stopPropagation()">
+    <div id="modalCaption" class="modal-caption"></div>
+  </div>
+
   <footer class="site-footer">
     Copyright © 2026 Department of Computer Education (KMUTNB) · นายณัฐภาส เงินห้อย #TCT34
   </footer>
@@ -738,6 +1072,27 @@
       document.querySelectorAll('.nav-item.open').forEach(n => n.classList.remove('open'));
       if (!was) el.classList.add('open');
     }
+
+    
+    function openModal(src, caption) {
+      const modal = document.getElementById('imgModal');
+      const img = document.getElementById('modalImg');
+      const cap = document.getElementById('modalCaption');
+      img.src = src;
+      cap.textContent = caption || '';
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imgModal');
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
 
     function closeMobileNav() {
       document.getElementById('siteNav').classList.remove('open');
