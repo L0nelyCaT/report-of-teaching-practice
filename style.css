@@ -880,3 +880,226 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
 .zoomable:hover {
   opacity: 0.92;
 }
+
+/* ===================================================
+   Organizational Tree (แผนผังโครงสร้างคณะผู้บริหาร)
+   =================================================== */
+.org-tree-wrapper {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.org-tree-header {
+  background: linear-gradient(135deg, var(--red-dark), var(--red));
+  color: #fff;
+  padding: 14px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.org-tree-header .org-badge-pill {
+  background: rgba(255,255,255,0.22);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.org-tree-inner {
+  padding: 36px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fbfcfe;
+  position: relative;
+  overflow-x: auto;
+}
+
+/* Root Node (Director) */
+.org-root-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Connector down from Director */
+.org-stem-top {
+  width: 2px;
+  height: 32px;
+  background: var(--red);
+}
+
+/* Branch & Children */
+.org-branch-wrap {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.org-children-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  position: relative;
+}
+.org-child-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 280px;
+  position: relative;
+}
+
+/* Horizontal line meeting vertical stems */
+.org-child-node::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 2px;
+  background: var(--red);
+  width: 100%;
+  left: 0;
+}
+.org-child-node:first-child::before {
+  left: 50%;
+  width: 50%;
+}
+.org-child-node:last-child::before {
+  left: 0;
+  width: 50%;
+}
+.org-child-node:only-child::before {
+  display: none;
+}
+
+/* Vertical stem down into each child card */
+.org-child-node::after {
+  content: '';
+  width: 2px;
+  height: 32px;
+  background: var(--red);
+}
+
+/* Member Card */
+.org-member-card {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  padding: 16px 14px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  position: relative;
+}
+.org-member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  border-color: var(--red);
+}
+
+.org-member-card.director-card {
+  max-width: 290px;
+  border-top: 4px solid var(--red);
+  background: #ffffff;
+}
+.org-member-card.deputy-card {
+  border-top: 4px solid #1e40af;
+}
+
+.org-photo-box {
+  width: 160px;
+  height: 195px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f1f5f9;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border: 2px solid #fff;
+  flex-shrink: 0;
+}
+.org-member-card.director-card .org-photo-box {
+  width: 175px;
+  height: 215px;
+}
+.org-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.org-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.org-badge.director-badge {
+  background: #fee2e2;
+  color: var(--red);
+}
+.org-badge.deputy-badge {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.org-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+.org-title {
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.org-member-card.deputy-card .org-title {
+  color: #1e40af;
+}
+.org-sub-desc {
+  font-size: 11.5px;
+  color: var(--gray-500);
+  line-height: 1.45;
+}
+
+/* Mobile responsive tree */
+@media (max-width: 820px) {
+  .org-children-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .org-child-node {
+    max-width: 290px;
+    width: 100%;
+  }
+  .org-child-node::before {
+    display: none;
+  }
+  .org-child-node::after {
+    height: 16px;
+  }
+}

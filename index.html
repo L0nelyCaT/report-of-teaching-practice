@@ -202,45 +202,89 @@
         </div>
       </div>
 
-      <!-- 4. คณะผู้บริหารสถานศึกษา -->
+      <!-- 4. คณะผู้บริหารสถานศึกษา (Tree Structure) -->
       <div class="sec-header" style="margin-top: 32px;">
         <div class="ico">👥</div>
         <h2>คณะผู้บริหารสถานศึกษา</h2>
       </div>
 
-      <div class="board-preview-card">
-        <div class="board-header">
-          <div class="board-title">
+      <div class="org-tree-wrapper">
+        <div class="org-tree-header">
+          <div style="display: flex; align-items: center; gap: 8px;">
             <span>🏛️</span>
-            <span>ทำเนียบคณะผู้บริหาร วิทยาลัยเทคนิคลพบุรี (4 คน)</span>
+            <span>แผนผังโครงสร้างคณะผู้บริหาร วิทยาลัยเทคนิคลพบุรี</span>
           </div>
-          <span class="roster-badge red">ผู้บริหารสถานศึกษา</span>
+          <span class="org-badge-pill">ผู้บริหารสถานศึกษา 4 ท่าน</span>
         </div>
-        <div class="board-img-wrap">
-          <img src="images/executives_board.png" alt="คณะผู้บริหารสถานศึกษา วิทยาลัยเทคนิคลพบุรี" class="zoomable" onclick="openModal('images/executives_board.png', 'คณะผู้บริหารสถานศึกษา วิทยาลัยเทคนิคลพบุรี (4 คน)')" />
-        </div>
-      </div>
 
-      <div class="roster-grid">
-        <div class="roster-card director">
-          <span class="roster-badge red">ผู้อำนวยการ</span>
-          <div class="roster-name">นายประสงค์ อุบลวัตร</div>
-          <div class="roster-role">ผู้บริหาร เชี่ยวชาญ · ผู้อำนวยการ วิทยาลัยเทคนิคลพบุรี</div>
-        </div>
-        <div class="roster-card deputy">
-          <span class="roster-badge blue">รองผู้อำนวยการ</span>
-          <div class="roster-name">นางพนา จันทร์ศิริ</div>
-          <div class="roster-role">ครู ชำนาญการพิเศษ · รองผู้อำนวยการ ฝ่ายวิชาการ<br>หัวหน้างาน งานพัฒนาหลักสูตรและการจัดการเรียนรู้</div>
-        </div>
-        <div class="roster-card deputy">
-          <span class="roster-badge blue">รองผู้อำนวยการ</span>
-          <div class="roster-name">นายสุทธิพงษ์ ชูเชื้อ</div>
-          <div class="roster-role">ผู้บริหาร ชำนาญการพิเศษ · รองผู้อำนวยการ ฝ่ายบริหารทรัพยากร</div>
-        </div>
-        <div class="roster-card deputy">
-          <span class="roster-badge blue">รองผู้อำนวยการ</span>
-          <div class="roster-name">นางสาวกัลยา สิงหาเขต</div>
-          <div class="roster-role">ผู้บริหาร ชำนาญการพิเศษ · รองผู้อำนวยการ ฝ่ายยุทธศาสตร์และแผนงาน<br>รองผู้อำนวยการ ฝ่ายกิจการนักเรียน นักศึกษา</div>
+        <div class="org-tree-inner">
+          <!-- Root Node: Director (ผู้อำนวยการ) -->
+          <div class="org-root-node">
+            <div class="org-member-card director-card">
+              <div class="org-photo-box">
+                <img src="images/executives/director.png" alt="นายประสงค์ อุบลวัตร" class="zoomable" onclick="openModal('images/executives/director.png', 'นายประสงค์ อุบลวัตร · ผู้อำนวยการ วิทยาลัยเทคนิคลพบุรี')" />
+              </div>
+              <span class="org-badge director-badge">ผู้อำนวยการ</span>
+              <div class="org-name">นายประสงค์ อุบลวัตร</div>
+              <div class="org-title">ผู้อำนวยการ วิทยาลัยเทคนิคลพบุรี</div>
+              <div class="org-sub-desc">ผู้บริหาร เชี่ยวชาญ</div>
+            </div>
+            <div class="org-stem-top"></div>
+          </div>
+
+          <!-- Branch & Children: Deputy Directors (รองผู้อำนวยการ 3 ฝ่าย) -->
+          <div class="org-branch-wrap">
+            <div class="org-children-row">
+              <!-- Deputy 1: ฝ่ายวิชาการ -->
+              <div class="org-child-node">
+                <div class="org-member-card deputy-card">
+                  <div class="org-photo-box">
+                    <img src="images/executives/deputy_academic.jpg" alt="นางพนา จันทร์ศิริ" class="zoomable" onclick="openModal('images/executives/deputy_academic.jpg', 'นางพนา จันทร์ศิริ · รองผู้อำนวยการ ฝ่ายวิชาการ')" />
+                  </div>
+                  <span class="org-badge deputy-badge">รองผู้อำนวยการ</span>
+                  <div class="org-name">นางพนา จันทร์ศิริ</div>
+                  <div class="org-title">รองผู้อำนวยการ ฝ่ายวิชาการ</div>
+                  <div class="org-sub-desc">
+                    ครู ชำนาญการพิเศษ<br>
+                    หัวหน้างาน งานพัฒนาหลักสูตรฯ<br>
+                    ครูประจำ แผนกวิชาช่างก่อสร้าง
+                  </div>
+                </div>
+              </div>
+
+              <!-- Deputy 2: ฝ่ายบริหารทรัพยากร -->
+              <div class="org-child-node">
+                <div class="org-member-card deputy-card">
+                  <div class="org-photo-box">
+                    <img src="images/executives/deputy_resources.jpg" alt="นายสุทธิพงษ์ ชูเชื้อ" class="zoomable" onclick="openModal('images/executives/deputy_resources.jpg', 'นายสุทธิพงษ์ ชูเชื้อ · รองผู้อำนวยการ ฝ่ายบริหารทรัพยากร')" />
+                  </div>
+                  <span class="org-badge deputy-badge">รองผู้อำนวยการ</span>
+                  <div class="org-name">นายสุทธิพงษ์ ชูเชื้อ</div>
+                  <div class="org-title">รองผู้อำนวยการ ฝ่ายบริหารทรัพยากร</div>
+                  <div class="org-sub-desc">
+                    ผู้บริหาร ชำนาญการพิเศษ<br>
+                    วิทยาลัยเทคนิคลพบุรี
+                  </div>
+                </div>
+              </div>
+
+              <!-- Deputy 3: ฝ่ายยุทธศาสตร์และแผนงาน / ฝ่ายกิจการนักเรียน นักศึกษา -->
+              <div class="org-child-node">
+                <div class="org-member-card deputy-card">
+                  <div class="org-photo-box">
+                    <img src="images/executives/deputy_strategy.png" alt="นางสาวกัลยา สิงหาเขต" class="zoomable" onclick="openModal('images/executives/deputy_strategy.png', 'นางสาวกัลยา สิงหาเขต · รองผู้อำนวยการ ฝ่ายยุทธศาสตร์และแผนงาน')" />
+                  </div>
+                  <span class="org-badge deputy-badge">รองผู้อำนวยการ</span>
+                  <div class="org-name">นางสาวกัลยา สิงหาเขต</div>
+                  <div class="org-title">รองผู้อำนวยการ ฝ่ายยุทธศาสตร์และแผนงาน</div>
+                  <div class="org-sub-desc">
+                    รองผู้อำนวยการ ฝ่ายกิจการนักเรียน นักศึกษา<br>
+                    ผู้บริหาร ชำนาญการพิเศษ
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
