@@ -288,7 +288,7 @@
         </div>
       </div>
 
-      <!-- 5. คณะครู แผนกวิชาเทคโนโลยีคอมพิวเตอร์ -->
+      <!-- 5. คณะครู แผนกวิชาเทคโนโลยีคอมพิวเตอร์ (Tree Structure) -->
       <div class="sec-header" style="margin-top: 32px;">
         <div class="ico">👨‍🏫</div>
         <h2>คณะครู แผนกวิชาเทคโนโลยีคอมพิวเตอร์</h2>
@@ -297,85 +297,175 @@
         มีคณะครูและบุคลากรในแผนกวิชาเทคโนโลยีคอมพิวเตอร์ รวม <strong>10 คน</strong> ประกอบด้วย:
       </p>
 
-      <div class="board-preview-card">
-        <div class="board-header">
-          <div class="board-title">
+      <div class="org-tree-wrapper">
+        <div class="org-tree-header" style="background: linear-gradient(135deg, #065f46, #059669);">
+          <div style="display: flex; align-items: center; gap: 8px;">
             <span>💻</span>
-            <span>หัวหน้าแผนก และ คณะครูประจำ (5 คน)</span>
+            <span>แผนผังโครงสร้างคณะครูและบุคลากร แผนกวิชาเทคโนโลยีคอมพิวเตอร์</span>
           </div>
-          <span class="roster-badge green">ครูประจำ</span>
+          <span class="org-badge-pill" style="background: rgba(255,255,255,0.25);">บุคลากร 10 ท่าน</span>
         </div>
-        <div class="board-img-wrap">
-          <img src="images/teachers_head_regular.png" alt="หัวหน้าแผนกและครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์" class="zoomable" onclick="openModal('images/teachers_head_regular.png', 'หัวหน้าแผนกและคณะครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
-        </div>
-      </div>
 
-      <div class="board-preview-card">
-        <div class="board-header">
-          <div class="board-title">
-            <span>🎓</span>
-            <span>คณะครูพิเศษสอน (5 คน)</span>
+        <div class="org-tree-inner">
+          <!-- Root Node: Head of Department (หัวหน้าแผนก) -->
+          <div class="org-root-node">
+            <div class="org-member-card head-card">
+              <div class="org-photo-box">
+                <img src="images/teachers/01_ronnaphum_head.png" alt="นายรณภูมิ นาคสมบูรณ์" class="zoomable" onclick="openModal('images/teachers/01_ronnaphum_head.png', 'นายรณภูมิ นาคสมบูรณ์ · หัวหน้าแผนกวิชาเทคโนโลยีคอมพิวเตอร์ (ครูพี่เลี้ยง)')" />
+              </div>
+              <span class="org-badge head-badge">หัวหน้าแผนก</span>
+              <div class="org-name">นายรณภูมิ นาคสมบูรณ์</div>
+              <div class="org-title" style="color: var(--red);">หัวหน้าแผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+              <div class="org-sub-desc">
+                ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์<br>
+                <em>(ครูพี่เลี้ยงนักศึกษาฝึกสอน)</em>
+              </div>
+            </div>
+            <div class="org-stem-top" style="background: #059669;"></div>
           </div>
-          <span class="roster-badge amber">ครูพิเศษสอน</span>
+
+          <!-- Branch 1: Regular Teachers (คณะครูประจำ 4 ท่าน) -->
+          <div class="org-branch-wrap">
+            <div class="org-children-row">
+              <!-- Regular Teacher 1: นายจิตวัฒน์ เป็นวงษ์ -->
+              <div class="org-child-node">
+                <div class="org-member-card teacher-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/02_jitwat.png" alt="นายจิตวัฒน์ เป็นวงษ์" class="zoomable" onclick="openModal('images/teachers/02_jitwat.png', 'นายจิตวัฒน์ เป็นวงษ์ · ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+                  </div>
+                  <span class="org-badge teacher-badge">ครูประจำ</span>
+                  <div class="org-name">นายจิตวัฒน์ เป็นวงษ์</div>
+                  <div class="org-title">ครู ชำนาญการพิเศษ</div>
+                  <div class="org-sub-desc">แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+                </div>
+              </div>
+
+              <!-- Regular Teacher 2: นางสาวศิริพิไลย พรหมแพทย์ -->
+              <div class="org-child-node">
+                <div class="org-member-card teacher-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/03_siripilai.jpg" alt="นางสาวศิริพิไลย พรหมแพทย์" class="zoomable" onclick="openModal('images/teachers/03_siripilai.jpg', 'นางสาวศิริพิไลย พรหมแพทย์ · ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+                  </div>
+                  <span class="org-badge teacher-badge">ครูประจำ</span>
+                  <div class="org-name">นางสาวศิริพิไลย พรหมแพทย์</div>
+                  <div class="org-title">ครู ชำนาญการพิเศษ</div>
+                  <div class="org-sub-desc">แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+                </div>
+              </div>
+
+              <!-- Regular Teacher 3: นายไพบูลย์ สมนึก -->
+              <div class="org-child-node">
+                <div class="org-member-card teacher-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/04_paiboon.jpg" alt="นายไพบูลย์ สมนึก" class="zoomable" onclick="openModal('images/teachers/04_paiboon.jpg', 'นายไพบูลย์ สมนึก · ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+                  </div>
+                  <span class="org-badge teacher-badge">ครูประจำ</span>
+                  <div class="org-name">นายไพบูลย์ สมนึก</div>
+                  <div class="org-title">ครู ชำนาญการ</div>
+                  <div class="org-sub-desc">แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+                </div>
+              </div>
+
+              <!-- Regular Teacher 4: นางสาวรจนาถ มูลตรีแก้ว -->
+              <div class="org-child-node">
+                <div class="org-member-card teacher-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/05_rotjanat.png" alt="นางสาวรจนาถ มูลตรีแก้ว" class="zoomable" onclick="openModal('images/teachers/05_rotjanat.png', 'นางสาวรจนาถ มูลตรีแก้ว · ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+                  </div>
+                  <span class="org-badge teacher-badge">ครูประจำ</span>
+                  <div class="org-name">นางสาวรจนาถ มูลตรีแก้ว</div>
+                  <div class="org-title">ครูผู้ช่วย</div>
+                  <div class="org-sub-desc">ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Divider: Special / Adjunct Teachers -->
+          <div class="org-tree-section-divider">
+            <span class="org-tree-section-title">🎓 คณะครูพิเศษสอน (5 ท่าน)</span>
+          </div>
+
+          <!-- Branch 2: Special Teachers (คณะครูพิเศษสอน 5 ท่าน) -->
+          <div class="org-branch-wrap">
+            <div class="org-children-row">
+              <!-- Special Teacher 1: นายเมธาวี ภูโต -->
+              <div class="org-child-node">
+                <div class="org-member-card special-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/06_metawee_special.png" alt="นายเมธาวี ภูโต" class="zoomable" onclick="openModal('images/teachers/06_metawee_special.png', 'นายเมธาวี ภูโต · ครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+                  </div>
+                  <span class="org-badge special-badge">ครูพิเศษสอน</span>
+                  <div class="org-name">นายเมธาวี ภูโต</div>
+                  <div class="org-title">ครูพิเศษสอน</div>
+                  <div class="org-sub-desc">ลูกจ้างชั่วคราว (ครูพิเศษสอน)</div>
+                </div>
+              </div>
+
+              <!-- Special Teacher 2: นายอนุชา ดำรงค์สกุล -->
+              <div class="org-child-node">
+                <div class="org-member-card special-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/07_anucha_special.png" alt="นายอนุชา ดำรงค์สกุล" class="zoomable" onclick="openModal('images/teachers/07_anucha_special.png', 'นายอนุชา ดำรงค์สกุล · ครูผู้ช่วย / ครูพิเศษสอน')" />
+                  </div>
+                  <span class="org-badge special-badge">ครูพิเศษสอน</span>
+                  <div class="org-name">นายอนุชา ดำรงค์สกุล</div>
+                  <div class="org-title">ครูผู้ช่วย · ครูพิเศษสอน</div>
+                  <div class="org-sub-desc">ลูกจ้างชั่วคราว (ครูพิเศษสอน)</div>
+                </div>
+              </div>
+
+              <!-- Special Teacher 3: นางสาวรพีพร ชูสุวรรณ -->
+              <div class="org-child-node">
+                <div class="org-member-card special-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/08_rapeeporn_special.png" alt="นางสาวรพีพร ชูสุวรรณ" class="zoomable" onclick="openModal('images/teachers/08_rapeeporn_special.png', 'นางสาวรพีพร ชูสุวรรณ · ครูพิเศษสอน')" />
+                  </div>
+                  <span class="org-badge special-badge">ครูพิเศษสอน</span>
+                  <div class="org-name">นางสาวรพีพร ชูสุวรรณ</div>
+                  <div class="org-title">ครูพิเศษสอน</div>
+                  <div class="org-sub-desc">ลูกจ้างชั่วคราว (ครูพิเศษสอน)</div>
+                </div>
+              </div>
+
+              <!-- Special Teacher 4: นายธนกฤต จำปาทอง -->
+              <div class="org-child-node">
+                <div class="org-member-card special-card">
+                  <div class="org-photo-box">
+                    <img src="images/teachers/09_thanakrit_special.png" alt="นายธนกฤต จำปาทอง" class="zoomable" onclick="openModal('images/teachers/09_thanakrit_special.png', 'นายธนกฤต จำปาทอง · ครู / ครูพิเศษสอน')" />
+                  </div>
+                  <span class="org-badge special-badge">ครูพิเศษสอน</span>
+                  <div class="org-name">นายธนกฤต จำปาทอง</div>
+                  <div class="org-title">ครู · ครูพิเศษสอน</div>
+                  <div class="org-sub-desc">ลูกจ้างชั่วคราว (ครูพิเศษสอน)</div>
+                </div>
+              </div>
+
+              <!-- Special Teacher 5: นางสาวกฤษณา เยี่ยมญาติ -->
+              <div class="org-child-node">
+                <div class="org-member-card special-card">
+                  <div class="org-photo-box" style="display: flex; align-items: center; justify-content: center; background: #e0f2fe;">
+                    <img src="images/teachers/10_kritsana_special.png" alt="นางสาวกฤษณา เยี่ยมญาติ" class="zoomable" style="width: 80px; height: 80px; object-fit: contain;" onclick="openModal('images/teachers/10_kritsana_special.png', 'นางสาวกฤษณา เยี่ยมญาติ · ครูพิเศษสอน')" />
+                  </div>
+                  <span class="org-badge special-badge">ครูพิเศษสอน</span>
+                  <div class="org-name">นางสาวกฤษณา เยี่ยมญาติ</div>
+                  <div class="org-title">ครูพิเศษสอน</div>
+                  <div class="org-sub-desc">แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="board-img-wrap">
-          <img src="images/teachers_special.png" alt="คณะครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์" class="zoomable" onclick="openModal('images/teachers_special.png', 'คณะครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์')" />
+
+        <!-- Additional view buttons for original boards -->
+        <div style="background: #f1f5f9; padding: 12px 20px; border-top: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <span style="font-size: 13px; color: var(--gray-600);">📋 เอกสารทำเนียบแผนกวิชาเดิม:</span>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="tab-btn" style="padding: 6px 14px; font-size: 12.5px; border-radius: 6px;" onclick="openModal('images/teachers_head_regular.png', 'บอร์ดทำเนียบหัวหน้าแผนกและครูประจำ')">👁️ ดูบอร์ดครูประจำ</button>
+            <button class="tab-btn" style="padding: 6px 14px; font-size: 12.5px; border-radius: 6px;" onclick="openModal('images/teachers_special.png', 'บอร์ดทำเนียบครูพิเศษสอน')">👁️ ดูบอร์ดครูพิเศษสอน</button>
+          </div>
         </div>
       </div>
-
-      <div class="roster-grid">
-        <div class="roster-card director">
-          <span class="roster-badge red">หัวหน้าแผนก</span>
-          <div class="roster-name">นายรณภูมิ นาคสมบูรณ์</div>
-          <div class="roster-role">ครู · หัวหน้าแผนกวิชาเทคโนโลยีคอมพิวเตอร์<br>ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์ (ครูพี่เลี้ยง)</div>
-        </div>
-        <div class="roster-card teacher">
-          <span class="roster-badge green">ครูประจำ</span>
-          <div class="roster-name">นายจิตวัฒน์ เป็นวงษ์</div>
-          <div class="roster-role">ครู ชำนาญการพิเศษ · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card teacher">
-          <span class="roster-badge green">ครูประจำ</span>
-          <div class="roster-name">นางสาวศิริพิไลย พรหมแพทย์</div>
-          <div class="roster-role">ครู ชำนาญการพิเศษ · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card teacher">
-          <span class="roster-badge green">ครูประจำ</span>
-          <div class="roster-name">นายไพบูลย์ สมนึก</div>
-          <div class="roster-role">ครู ชำนาญการ · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card teacher">
-          <span class="roster-badge green">ครูประจำ</span>
-          <div class="roster-name">นางสาวรจนาถ มูลตรีแก้ว</div>
-          <div class="roster-role">ครูผู้ช่วย · ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card special">
-          <span class="roster-badge amber">ครูพิเศษสอน</span>
-          <div class="roster-name">นายเมธาวี ภูโต</div>
-          <div class="roster-role">ครูพิเศษสอน · ลูกจ้างชั่วคราว แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card special">
-          <span class="roster-badge amber">ครูพิเศษสอน</span>
-          <div class="roster-name">นายอนุชา ดำรงค์สกุล</div>
-          <div class="roster-role">ครูผู้ช่วย · ครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card special">
-          <span class="roster-badge amber">ครูพิเศษสอน</span>
-          <div class="roster-name">นางสาวรพีพร ชูสุวรรณ</div>
-          <div class="roster-role">ครูพิเศษสอน · ลูกจ้างชั่วคราว แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card special">
-          <span class="roster-badge amber">ครูพิเศษสอน</span>
-          <div class="roster-name">นายธนกฤต จำปาทอง</div>
-          <div class="roster-role">ครู · ครูพิเศษสอน แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-        <div class="roster-card special">
-          <span class="roster-badge amber">ครูพิเศษสอน</span>
-          <div class="roster-name">นางสาวกฤษณา เยี่ยมญาติ</div>
-          <div class="roster-role">ครูพิเศษสอน · แผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
-        </div>
-      </div>
-
       <!-- 6. ครูพี่เลี้ยงและนักศึกษาฝึกสอน -->
       <div class="sec-header" style="margin-top: 32px;">
         <div class="ico">🤝</div>
@@ -387,7 +477,7 @@
           <div class="profile-card-header">👨‍🏫 ครูพี่เลี้ยง</div>
           <div class="profile-card-body">
             <div class="profile-photo">
-              <img src="images/ครูพี่เลี้ยง.png" alt="ครูพี่เลี้ยง" class="zoomable" onclick="openModal('images/ครูพี่เลี้ยง.png', 'นายรณภูมิ นาคสมบูรณ์ (ครูพี่เลี้ยง)')" />
+              <img src="images/teachers/01_ronnaphum_head.png" alt="ครูพี่เลี้ยง" class="zoomable" onclick="openModal('images/teachers/01_ronnaphum_head.png', 'นายรณภูมิ นาคสมบูรณ์ (ครูพี่เลี้ยง)')" />
             </div>
             <div class="profile-info">
               <div class="profile-name">นายรณภูมิ นาคสมบูรณ์</div>

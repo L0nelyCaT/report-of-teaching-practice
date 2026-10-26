@@ -1103,3 +1103,66 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
     height: 16px;
   }
 }
+
+/* Teacher Tree Specific Cards & Badges */
+.org-member-card.head-card {
+  max-width: 290px;
+  border-top: 4px solid var(--red);
+}
+.org-member-card.teacher-card {
+  border-top: 4px solid #059669;
+}
+.org-member-card.special-card {
+  border-top: 4px solid #d97706;
+}
+
+.org-badge.head-badge {
+  background: #fee2e2;
+  color: var(--red);
+}
+.org-badge.teacher-badge {
+  background: #d1fae5;
+  color: #065f46;
+}
+.org-badge.special-badge {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.org-member-card.teacher-card .org-title {
+  color: #059669;
+}
+.org-member-card.special-card .org-title {
+  color: #d97706;
+}
+
+.org-tree-section-divider {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 36px 0 16px;
+  position: relative;
+}
+.org-tree-section-divider::before,
+.org-tree-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: #e2e8f0;
+}
+.org-tree-section-title {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: var(--gray-700);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
