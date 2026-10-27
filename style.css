@@ -937,14 +937,14 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
 /* Connector down from Director */
 .org-stem-top {
   width: 2px;
-  height: 32px;
+  height: 28px;
   background: var(--red);
 }
 
 /* Branch & Children */
 .org-branch-wrap {
   width: 100%;
-  max-width: 960px;
+  max-width: 1080px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -953,7 +953,6 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
   display: flex;
   justify-content: center;
   width: 100%;
-  gap: 20px;
   position: relative;
 }
 .org-child-node {
@@ -962,6 +961,7 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
   align-items: center;
   flex: 1;
   max-width: 280px;
+  padding: 24px 10px 0;
   position: relative;
 }
 
@@ -987,12 +987,39 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
   display: none;
 }
 
-/* Vertical stem down into each child card */
+/* Vertical stem down from horizontal line into top of child card (NO lines at bottom) */
 .org-child-node::after {
   content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 2px;
-  height: 32px;
+  height: 24px;
   background: var(--red);
+}
+
+/* Teacher Tree Branch (Emerald Green) */
+.teacher-branch .org-child-node::before,
+.teacher-branch .org-child-node::after {
+  background: #059669;
+}
+
+/* Special Teachers Branch (Clean Cards Roster, No Connector Lines) */
+.special-branch .org-children-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.special-branch .org-child-node {
+  padding: 0;
+  flex: 0 1 195px;
+  max-width: 205px;
+}
+.special-branch .org-child-node::before,
+.special-branch .org-child-node::after {
+  display: none !important;
 }
 
 /* Member Card */
@@ -1098,12 +1125,18 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
   .org-child-node {
     max-width: 290px;
     width: 100%;
+    padding: 0;
   }
-  .org-child-node::before {
-    display: none;
-  }
+  .org-child-node::before,
   .org-child-node::after {
+    display: none !important;
+  }
+  .org-stem-top {
     height: 16px;
+  }
+  .special-branch .org-child-node {
+    max-width: 290px;
+    width: 100%;
   }
 }
 
