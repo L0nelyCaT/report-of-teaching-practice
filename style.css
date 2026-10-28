@@ -1202,3 +1202,300 @@ tbody tr:nth-child(even) { background: var(--gray-50); }
   gap: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
+
+/* ==========================================================================
+   Plan (แผนการสอน) Preview & Viewer Styles
+   ========================================================================== */
+.plan-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.plan-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.plan-btn-primary {
+  background: var(--red);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(192, 57, 43, 0.25);
+}
+.plan-btn-primary:hover {
+  background: var(--red-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.35);
+}
+
+.plan-btn-outline {
+  background: #ffffff;
+  color: var(--gray-700);
+  border-color: var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+.plan-btn-outline:hover {
+  background: var(--gray-50);
+  color: var(--red);
+  border-color: var(--red-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.plan-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+.plan-heading-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.plan-heading-hint {
+  font-size: 12.5px;
+  color: var(--gray-500);
+}
+
+.plan-samples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 900px) {
+  .plan-samples-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.plan-sample-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.plan-sample-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--red-light);
+}
+
+.plan-thumb-container {
+  position: relative;
+  aspect-ratio: 1 / 1.414;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+
+.plan-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+
+.plan-sample-card:hover .plan-thumb-img {
+  transform: scale(1.05);
+}
+
+.plan-page-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(17, 24, 39, 0.78);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.plan-zoom-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(192, 57, 43, 0.92);
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  opacity: 0.88;
+  transition: opacity .2s, transform .2s;
+}
+
+.plan-sample-card:hover .plan-zoom-icon {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.plan-sample-info {
+  padding: 10px 12px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--gray-100);
+  flex: 1;
+}
+
+.plan-sample-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1.4;
+}
+
+.plan-sample-sub {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+/* Interactive Document Viewer Card */
+.plan-viewer-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.plan-viewer-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--gray-200);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.plan-viewer-topbar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.plan-tag-pages {
+  background: var(--red-bg);
+  color: var(--red);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--red-light);
+}
+
+.plan-viewer-topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.plan-link-btn {
+  font-size: 12.5px;
+  color: var(--gray-700);
+  background: var(--gray-100);
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.plan-link-btn:hover {
+  background: var(--red);
+  color: #ffffff;
+}
+
+.plan-frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: 680px;
+  background: #f1f5f9;
+}
+
+@media (max-width: 640px) {
+  .plan-frame-wrapper {
+    height: 480px;
+  }
+}
+
+.plan-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.plan-empty-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 2px dashed var(--gray-200);
+  padding: 40px 24px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.plan-empty-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.plan-empty-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: 6px;
+}
+
+.plan-empty-desc {
+  font-size: 13.5px;
+  color: var(--gray-500);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
