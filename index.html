@@ -7,14 +7,14 @@
   <title>Report of Teaching Practice – ณัฐภาส เงินห้อย</title>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261028_plan" />
+  <link rel="stylesheet" href="style.css?v=20261028_nav_feedback" />
 </head>
 
 <body>
 
   <header class="site-header">
-    <div class="header-logo">📚</div>
-    <div class="header-title">
+    <div class="header-logo" onclick="go('home')" style="cursor: pointer;" title="กลับหน้าแรก">📚</div>
+    <div class="header-title" onclick="go('home')" style="cursor: pointer;" title="กลับหน้าแรก">
       Report of Teaching Practice
       <span>นายณัฐภาส เงินห้อย · TCT34</span>
     </div>
@@ -23,38 +23,38 @@
 
   <nav class="site-nav" id="siteNav">
     <div class="nav-inner">
-      <div class="nav-item"><a onclick="go('home')">🏠 หน้าแรก</a></div>
-      <div class="nav-item"><a onclick="go('school')">🏫 สถานศึกษา</a></div>
-      <div class="nav-item" id="n-tt">
-        <a onclick="dropTap('n-tt')">📅 ตารางสอน <span class="ch">▼</span></a>
+      <div class="nav-item active" data-page="home"><a onclick="go('home')">🏠 หน้าแรก</a></div>
+      <div class="nav-item" data-page="school"><a onclick="go('school')">🏫 สถานศึกษา</a></div>
+      <div class="nav-item" id="n-tt" data-page="timetable">
+        <a onclick="dropClick('timetable','n-tt')">📅 ตารางสอน <span class="ch">▼</span></a>
         <div class="dropdown">
-          <a onclick="goSem('timetable',1)">ภาคเรียนที่ 1</a>
-          <a onclick="goSem('timetable',2)">ภาคเรียนที่ 2</a>
+          <a onclick="goSem('timetable',1)" data-sem="1">ภาคเรียนที่ 1</a>
+          <a onclick="goSem('timetable',2)" data-sem="2">ภาคเรียนที่ 2</a>
         </div>
       </div>
-      <div class="nav-item" id="n-pl">
-        <a onclick="dropTap('n-pl')">📝 แผนการสอน <span class="ch">▼</span></a>
+      <div class="nav-item" id="n-pl" data-page="plan">
+        <a onclick="dropClick('plan','n-pl')">📝 แผนการสอน <span class="ch">▼</span></a>
         <div class="dropdown">
-          <a onclick="goSem('plan',1)">ภาคเรียนที่ 1</a>
-          <a onclick="goSem('plan',2)">ภาคเรียนที่ 2</a>
+          <a onclick="goSem('plan',1)" data-sem="1">ภาคเรียนที่ 1</a>
+          <a onclick="goSem('plan',2)" data-sem="2">ภาคเรียนที่ 2</a>
         </div>
       </div>
-      <div class="nav-item" id="n-di">
-        <a onclick="dropTap('n-di')">📖 บันทึกการสอน <span class="ch">▼</span></a>
+      <div class="nav-item" id="n-di" data-page="diary">
+        <a onclick="dropClick('diary','n-di')">📖 บันทึกการสอน <span class="ch">▼</span></a>
         <div class="dropdown">
-          <a onclick="goSem('diary',1)">ภาคเรียนที่ 1</a>
-          <a onclick="goSem('diary',2)">ภาคเรียนที่ 2</a>
+          <a onclick="goSem('diary',1)" data-sem="1">ภาคเรียนที่ 1</a>
+          <a onclick="goSem('diary',2)" data-sem="2">ภาคเรียนที่ 2</a>
         </div>
       </div>
-      <div class="nav-item" id="n-ac">
-        <a onclick="dropTap('n-ac')">🎯 กิจกรรม <span class="ch">▼</span></a>
+      <div class="nav-item" id="n-ac" data-page="activity">
+        <a onclick="dropClick('activity','n-ac')">🎯 กิจกรรม <span class="ch">▼</span></a>
         <div class="dropdown">
-          <a onclick="goSem('activity',1)">ภาคเรียนที่ 1</a>
-          <a onclick="goSem('activity',2)">ภาคเรียนที่ 2</a>
+          <a onclick="goSem('activity',1)" data-sem="1">ภาคเรียนที่ 1</a>
+          <a onclick="goSem('activity',2)" data-sem="2">ภาคเรียนที่ 2</a>
         </div>
       </div>
-      <div class="nav-item"><a onclick="go('research')">🔬 วิจัยในชั้นเรียน</a></div>
-      <div class="nav-item"><a onclick="go('evaluate')">📊 แบบประเมิน</a></div>
+      <div class="nav-item" data-page="research"><a onclick="go('research')">🔬 วิจัยในชั้นเรียน</a></div>
+      <div class="nav-item" data-page="evaluate"><a onclick="go('evaluate')">📊 แบบประเมิน</a></div>
     </div>
   </nav>
 
@@ -1225,15 +1225,74 @@
       research: 'sec-research', evaluate: 'sec-evaluate'
     };
 
-    function go(k) {
-      Object.values(SEC).forEach(id => document.getElementById(id).classList.remove('active'));
-      document.getElementById(SEC[k]).classList.add('active');
+    // Tracks last selected semester for dropdown sections
+    const currentSem = {
+      timetable: 1,
+      plan: 1,
+      diary: 1,
+      activity: 1
+    };
+
+    function updateNavFeedback(pageKey, sem) {
+      // Clear active states on all nav-items and their links
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+        const a = item.querySelector(':scope > a');
+        if (a) a.classList.remove('active');
+        item.querySelectorAll('.dropdown a').forEach(da => da.classList.remove('active'));
+      });
+
+      // Find matching nav-item
+      const currentNav = document.querySelector(`.nav-item[data-page="${pageKey}"]`);
+      if (currentNav) {
+        currentNav.classList.add('active');
+        const mainA = currentNav.querySelector(':scope > a');
+        if (mainA) mainA.classList.add('active');
+
+        // Highlight active semester in dropdown if applicable
+        const activeSem = sem || currentSem[pageKey] || 1;
+        const semLink = currentNav.querySelector(`.dropdown a[data-sem="${activeSem}"]`);
+        if (semLink) semLink.classList.add('active');
+      }
+    }
+
+    function go(k, sem) {
+      if (!SEC[k]) return;
+      Object.values(SEC).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+      const target = document.getElementById(SEC[k]);
+      if (target) target.classList.add('active');
+
+      // Determine active semester
+      let semNum = sem;
+      if (currentSem[k] !== undefined) {
+        if (semNum) {
+          currentSem[k] = semNum;
+        } else {
+          semNum = currentSem[k];
+        }
+      }
+
+      updateNavFeedback(k, semNum);
+      try {
+        if (k === 'home') {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        } else if (semNum && currentSem[k] !== undefined) {
+          history.replaceState(null, '', '#' + k + '-' + semNum);
+        } else {
+          history.replaceState(null, '', '#' + k);
+        }
+      } catch (e) {}
       closeMobileNav();
+      document.querySelectorAll('.nav-item.open').forEach(n => n.classList.remove('open'));
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function goSem(sec, n) {
-      go(sec);
+      currentSem[sec] = n;
+      go(sec, n);
       const btns = document.querySelectorAll(`#${SEC[sec]} .tab-btn`);
       btns.forEach((b, i) => b.classList.toggle('active', i === n - 1));
       const cnts = document.querySelectorAll(`#${SEC[sec]} .sem-content`);
@@ -1241,21 +1300,34 @@
     }
 
     function semTab(sec, n, btn) {
+      currentSem[sec] = n;
       const btns = document.querySelectorAll(`#${SEC[sec]} .tab-btn`);
       btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const cnts = document.querySelectorAll(`#${SEC[sec]} .sem-content`);
       cnts.forEach((c, i) => c.classList.toggle('active', i === n - 1));
+      updateNavFeedback(sec, n);
+      try {
+        history.replaceState(null, '', '#' + sec + '-' + n);
+      } catch (e) {}
+    }
+
+    function dropClick(sec, id) {
+      if (window.innerWidth <= 820) {
+        dropTap(id);
+      } else {
+        goSem(sec, currentSem[sec] || 1);
+      }
     }
 
     function dropTap(id) {
       const el = document.getElementById(id);
+      if (!el) return;
       const was = el.classList.contains('open');
       document.querySelectorAll('.nav-item.open').forEach(n => n.classList.remove('open'));
       if (!was) el.classList.add('open');
     }
 
-    
     function openModal(src, caption) {
       const modal = document.getElementById('imgModal');
       const img = document.getElementById('modalImg');
@@ -1282,8 +1354,17 @@
     }
 
     document.getElementById('hbBtn').addEventListener('click', () => {
-      document.getElementById('siteNav').classList.toggle('open');
-      document.getElementById('hbBtn').classList.toggle('open');
+      const nav = document.getElementById('siteNav');
+      const hb = document.getElementById('hbBtn');
+      const isOpen = nav.classList.toggle('open');
+      hb.classList.toggle('open');
+      if (isOpen) {
+        // Automatically expand current section dropdown in mobile view
+        const activeNav = nav.querySelector('.nav-item.active');
+        if (activeNav && activeNav.querySelector('.dropdown')) {
+          activeNav.classList.add('open');
+        }
+      }
     });
 
     document.addEventListener('click', e => {
@@ -1292,6 +1373,34 @@
         closeMobileNav();
       }
     });
+
+    function getPageFromHash() {
+      const hash = window.location.hash.replace(/^#/, '');
+      if (!hash) return null;
+      if (SEC[hash]) return { page: hash, sem: currentSem[hash] || 1 };
+      const parts = hash.split('-');
+      if (parts.length === 2 && SEC[parts[0]]) {
+        const sem = parseInt(parts[1], 10);
+        return { page: parts[0], sem: isNaN(sem) ? 1 : sem };
+      }
+      return null;
+    }
+
+    function syncFromHash() {
+      const target = getPageFromHash();
+      if (target) {
+        if (target.sem && currentSem[target.page] !== undefined) {
+          goSem(target.page, target.sem);
+        } else {
+          go(target.page);
+        }
+      } else {
+        updateNavFeedback('home');
+      }
+    }
+
+    window.addEventListener('hashchange', syncFromHash);
+    syncFromHash();
   </script>
 </body>
 
