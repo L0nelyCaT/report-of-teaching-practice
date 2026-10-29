@@ -7,7 +7,7 @@
   <title>Report of Teaching Practice – ณัฐภาส เงินห้อย</title>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261028_nav_feedback" />
+  <link rel="stylesheet" href="style.css?v=20261029_home_redesign" />
 </head>
 
 <body>
@@ -76,6 +76,11 @@
               <div class="chip">🏫 วทค.ลพบุรี</div>
               <div class="chip">📅 2569–2570</div>
             </div>
+            <div style="margin-top: 14px;">
+              <button class="btn-subtle" onclick="openModal('images/cover.png', 'ปกรายงานการปฏิบัติการสอน · นายณัฐภาส เงินห้อย #TCT34')">
+                🖼️ ดูปกรายงานฉบับเต็ม (Full Cover)
+              </button>
+            </div>
           </div>
           <div class="hero-photo">
             <img src="images/รูปชุดนศ.png" alt="ณัฐภาส เงินห้อย" />
@@ -83,41 +88,330 @@
         </div>
       </div>
 
-      <div class="card-grid">
-        <div class="card" onclick="go('school')">
-          <div class="card-icon">🏫</div>
-          <h3>สถานศึกษา</h3>
-          <p>วิทยาลัยเทคนิคลพบุรี · เทคโนโลยีคอมพิวเตอร์</p>
+      <!-- 1. รายวิชาที่ลงทะเบียนฝึกประสบการณ์วิชาชีพครู -->
+      <div class="home-block">
+        <div class="sec-header">
+          <div class="ico">📚</div>
+          <h2>รายวิชาที่ลงทะเบียนฝึกประสบการณ์วิชาชีพครู</h2>
+          <button class="btn-subtle" onclick="openModal('images/subject.png', 'การ์ดสรุปรายวิชาที่ลงทะเบียนฝึกประสบการณ์วิชาชีพครู')">
+            🖼️ ดูการ์ดกราฟิก
+          </button>
         </div>
-        <div class="card" onclick="goSem('timetable',1)">
-          <div class="card-icon">📅</div>
-          <h3>ตารางสอน</h3>
-          <p>ตารางสอนรายสัปดาห์ ภาคเรียนที่ 1 และ 2</p>
+        <div class="home-course-card">
+          <div class="ribbon-tag">รายวิชา</div>
+          <div class="course-list">
+            <div class="course-item">
+              <div class="course-code-badge">020413232</div>
+              <div class="course-details">
+                <div class="course-name-th">ปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 1 (540 ชั่วโมง)</div>
+                <div class="course-name-en">Teaching Practice in Computer Technology in Educational Institute I</div>
+                <div class="course-meta">
+                  <span class="meta-pill">📅 ภาคเรียนที่ 1 ปีการศึกษา 2569</span>
+                  <span class="meta-pill">⏱️ จำนวน 540 ชั่วโมง (6 หน่วยกิต)</span>
+                </div>
+              </div>
+            </div>
+            <div class="course-divider"></div>
+            <div class="course-item">
+              <div class="course-code-badge">020413233</div>
+              <div class="course-details">
+                <div class="course-name-th">ปฏิบัติการสอนด้านเทคโนโลยีคอมพิวเตอร์ในสถานศึกษา 2 (540 ชั่วโมง)</div>
+                <div class="course-name-en">Teaching Practice in Computer Technology in Educational Institute II</div>
+                <div class="course-meta">
+                  <span class="meta-pill">📅 ภาคเรียนที่ 2 ปีการศึกษา 2569</span>
+                  <span class="meta-pill">⏱️ จำนวน 540 ชั่วโมง (6 หน่วยกิต)</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card" onclick="goSem('plan',1)">
-          <div class="card-icon">📝</div>
-          <h3>แผนการสอน</h3>
-          <p>แผนการจัดการเรียนรู้ ภาคเรียนที่ 1 และ 2</p>
+      </div>
+
+      <!-- 2. สถานที่ฝึกปฏิบัติการสอน -->
+      <div class="home-block">
+        <div class="sec-header">
+          <div class="ico">🏛️</div>
+          <h2>สถานที่ฝึกปฏิบัติการสอน</h2>
+          <button class="btn-subtle" onclick="openModal('images/school_info.png', 'การ์ดสรุปสถานที่ฝึกปฏิบัติการสอน · วิทยาลัยเทคนิคลพบุรี')">
+            🖼️ ดูการ์ดกราฟิก
+          </button>
         </div>
-        <div class="card" onclick="goSem('diary',1)">
-          <div class="card-icon">📖</div>
-          <h3>บันทึกการสอน</h3>
-          <p>บันทึกหลังการสอนแต่ละสัปดาห์</p>
+        <div class="home-school-card">
+          <div class="school-top-banner">
+            <div class="school-main-name">
+              <span class="badge-tag">สถาบันการอาชีวศึกษาภาคกลาง 2</span>
+              <h3>วิทยาลัยเทคนิคลพบุรี <span>(Lopburi Technical College)</span></h3>
+              <p>สังกัดสำนักงานคณะกรรมการการอาชีวศึกษา กระทรวงศึกษาธิการ</p>
+            </div>
+            <button class="school-detail-btn" onclick="go('school')">
+              🏫 ดูข้อมูลสถานศึกษาฉบับเต็ม ›
+            </button>
+          </div>
+          <div class="school-info-grid">
+            <div class="school-info-pill-card">
+              <div class="sip-ico">💻</div>
+              <div class="sip-content">
+                <span class="sip-label">แผนกวิชาที่ฝึกสอน</span>
+                <span class="sip-value">แผนกวิชาเทคโนโลยีคอมพิวเตอร์</span>
+              </div>
+            </div>
+            <div class="school-info-pill-card">
+              <div class="sip-ico">📅</div>
+              <div class="sip-content">
+                <span class="sip-label">ระยะเวลาในการฝึกสอน</span>
+                <span class="sip-value">5 พฤษภาคม 2569 ถึง 15 มีนาคม 2570</span>
+              </div>
+            </div>
+            <div class="school-info-pill-card">
+              <div class="sip-ico">⏰</div>
+              <div class="sip-content">
+                <span class="sip-label">วันเวลาในการฝึกสอน</span>
+                <span class="sip-value">วันจันทร์ – ศุกร์ เวลา 07.30 – 16.15 น.</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card" onclick="goSem('activity',1)">
-          <div class="card-icon">🎯</div>
-          <h3>กิจกรรม</h3>
-          <p>กิจกรรมในและนอกหลักสูตร</p>
+      </div>
+
+      <!-- 3. ครูพี่เลี้ยง และ นักศึกษาฝึกสอน -->
+      <div class="home-block">
+        <div class="sec-header">
+          <div class="ico">🤝</div>
+          <h2>ครูพี่เลี้ยง และ นักศึกษาฝึกสอน</h2>
         </div>
-        <div class="card" onclick="go('research')">
-          <div class="card-icon">🔬</div>
-          <h3>วิจัยในชั้นเรียน</h3>
-          <p>งานวิจัยเพื่อพัฒนาการเรียนการสอน</p>
+        <div class="profile-grid">
+          <!-- ครูพี่เลี้ยง -->
+          <div class="profile-card">
+            <div class="profile-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>👨‍🏫 ครูพี่เลี้ยง</span>
+              <button class="btn-card-mini" onclick="openModal('images/teacher.png', 'การ์ดกราฟิกครูพี่เลี้ยง · นายรณภูมิ นาคสมบูรณ์')">🖼️ ดูการ์ด</button>
+            </div>
+            <div class="profile-card-body">
+              <div class="profile-photo">
+                <img src="images/teachers/01_ronnaphum_head.png" alt="นายรณภูมิ นาคสมบูรณ์" class="zoomable" onclick="openModal('images/teachers/01_ronnaphum_head.png', 'นายรณภูมิ นาคสมบูรณ์ · ครูพี่เลี้ยง (หัวหน้าแผนกวิชาเทคโนโลยีคอมพิวเตอร์)')" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">นายรณภูมิ นาคสมบูรณ์</div>
+                <div class="profile-badge-pill">หัวหน้าแผนกวิชาเทคโนโลยีคอมพิวเตอร์</div>
+                <div class="profile-detail">
+                  ครูประจำ แผนกวิชาเทคโนโลยีคอมพิวเตอร์<br>
+                  ครูพี่เลี้ยงนักศึกษาฝึกประสบการณ์วิชาชีพครู<br>
+                  <strong>วิทยาลัยเทคนิคลพบุรี</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- นักศึกษาฝึกสอน -->
+          <div class="profile-card">
+            <div class="profile-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🎓 นักศึกษาฝึกสอน</span>
+              <button class="btn-card-mini" onclick="openModal('images/student.png', 'การ์ดกราฟิกนักศึกษาฝึกสอน · นายณัฐภาส เงินห้อย')">🖼️ ดูการ์ด</button>
+            </div>
+            <div class="profile-card-body">
+              <div class="profile-photo">
+                <img src="images/student_white_uniform.jpg?v=20261026" alt="นายณัฐภาส เงินห้อย" class="zoomable" onclick="openModal('images/student_white_uniform.jpg?v=20261026', 'นายณัฐภาส เงินห้อย · นักศึกษาฝึกสอน (TCT34 KMUTNB)')" />
+              </div>
+              <div class="profile-info">
+                <div class="profile-name">นายณัฐภาส เงินห้อย</div>
+                <div class="profile-badge-pill" style="background: rgba(192, 57, 43, 0.1); color: var(--red);">นักศึกษาระดับปริญญาตรี (TCT34)</div>
+                <div class="profile-detail">
+                  ภาควิชาคอมพิวเตอร์ศึกษา คณะครุศาสตร์อุตสาหกรรม<br>
+                  <strong>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (KMUTNB)</strong>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card" onclick="go('evaluate')">
-          <div class="card-icon">📊</div>
-          <h3>แบบประเมิน</h3>
-          <p>แบบประเมินสมรรถนะวิชาชีพครู</p>
+      </div>
+
+      <!-- 4. งานที่รับผิดชอบระหว่างการฝึกปฏิบัติการสอน -->
+      <div class="home-block">
+        <div class="sec-header">
+          <div class="ico">💼</div>
+          <h2>งานที่รับผิดชอบระหว่างการฝึกปฏิบัติการสอน</h2>
+          <button class="btn-subtle" onclick="go('activity')">
+            🎯 ดูกิจกรรมทั้งหมด ›
+          </button>
+        </div>
+
+        <!-- 6 Core Duty Cards -->
+        <div class="duty-scope-grid">
+          <div class="duty-scope-card">
+            <div class="duty-ico">🧑‍🏫</div>
+            <div class="duty-text">
+              <h4>1. งานด้านการจัดการเรียนการสอน</h4>
+              <p>ปฏิบัติการสอนในรายวิชาแผนกวิชาเทคโนโลยีคอมพิวเตอร์ ทั้งภาคทฤษฎีและปฏิบัติการ ออกแบบกระบวนการเรียนรู้แบบ Active Learning มุ่งเน้นสมรรถนะอาชีพ</p>
+            </div>
+          </div>
+          <div class="duty-scope-card">
+            <div class="duty-ico">📑</div>
+            <div class="duty-text">
+              <h4>2. งานจัดทำแผนการสอนและสื่อ</h4>
+              <p>จัดทำแผนการจัดการเรียนรู้ที่เน้นผู้เรียนเป็นสำคัญ สื่อการสอนดิจิทัล ใบงาน ใบความรู้ และคู่มือการปฏิบัติการ</p>
+            </div>
+          </div>
+          <div class="duty-scope-card">
+            <div class="duty-ico">📊</div>
+            <div class="duty-text">
+              <h4>3. งานด้านการวัดและประเมินผล</h4>
+              <p>สร้างเครื่องมือวัดผลและประเมินผลตามสภาพจริง แบบทดสอบ ทักษะปฏิบัติการ และประเมินคุณลักษณะอันพึงประสงค์</p>
+            </div>
+          </div>
+          <div class="duty-scope-card">
+            <div class="duty-ico">🤝</div>
+            <div class="duty-text">
+              <h4>4. งานครูที่ปรึกษาและโฮมรูม</h4>
+              <p>ดูแลระเบียบวินัย ความประพฤติ การเข้าแถวเคารพธงชาติ การตรวจเครื่องแบบ กิจกรรมโฮมรูม และให้คำปรึกษาแนะแนวการศึกษา</p>
+            </div>
+          </div>
+          <div class="duty-scope-card">
+            <div class="duty-ico">🎯</div>
+            <div class="duty-text">
+              <h4>5. งานโครงการและกิจกรรมวิทยาลัย</h4>
+              <p>ร่วมจัดและสนับสนุนกิจกรรมชมรมวิชาชีพ กิจกรรมแผนกวิชา งานจิตอาสา โครงการบริการวิชาชีพ และงานตามที่สถานศึกษามอบหมาย</p>
+            </div>
+          </div>
+          <div class="duty-scope-card">
+            <div class="duty-ico">🔬</div>
+            <div class="duty-text">
+              <h4>6. งานวิจัยในชั้นเรียน</h4>
+              <p>ศึกษาวิเคราะห์ปัญหาในชั้นเรียนและพัฒนานวัตกรรมการจัดการเรียนรู้เพื่อแก้ปัญหาและยกระดับผลสัมฤทธิ์ของผู้เรียน</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Visual Gallery Photos (Matching Google Sites) -->
+        <div class="home-gallery-wrap">
+          <div class="home-gallery-title">
+            <span>📸 ภาพประกอบภาระงานและกิจกรรมระหว่างการฝึกสอน</span>
+            <small style="color: var(--gray-500); font-weight: 400;">(คลิกเพื่อดูภาพขยาย)</small>
+          </div>
+          <div class="home-gallery-grid">
+            <div class="home-gallery-item" onclick="openModal('images/activity_overview_1.png', 'การจัดการเรียนการสอนและโครงการฝึกอบรมเชิงปฏิบัติการ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')">
+              <img src="images/activity_overview_1.png" alt="การจัดการเรียนการสอนและการอบรมเชิงปฏิบัติการ" loading="lazy" />
+              <div class="hg-overlay">
+                <span>🔍 ขยายภาพ</span>
+                <p>การจัดการเรียนการสอน / อบรมเชิงปฏิบัติการ</p>
+              </div>
+            </div>
+            <div class="home-gallery-item" onclick="openModal('imagesactivity/activity-01/1.jpg', 'กิจกรรมนักเรียนนักศึกษาเข้าพบครูที่ปรึกษา · 21 พฤษภาคม 2569')">
+              <img src="imagesactivity/activity-01/1.jpg" alt="กิจกรรมนักเรียนนักศึกษาเข้าพบครูที่ปรึกษา" loading="lazy" />
+              <div class="hg-overlay">
+                <span>🔍 ขยายภาพ</span>
+                <p>กิจกรรมพบครูที่ปรึกษา / โฮมรูม</p>
+              </div>
+            </div>
+            <div class="home-gallery-item" onclick="openModal('imagesactivity/activity-04/1.jpg', 'กิจกรรมเลือกตั้งประธานชมรมวิชาชีพ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')">
+              <img src="imagesactivity/activity-04/1.jpg" alt="กิจกรรมเลือกตั้งประธานชมรมวิชาชีพ" loading="lazy" />
+              <div class="hg-overlay">
+                <span>🔍 ขยายภาพ</span>
+                <p>กิจกรรมชมรมวิชาชีพคอมพิวเตอร์</p>
+              </div>
+            </div>
+            <div class="home-gallery-item" onclick="openModal('imagesactivity/activity-05/1.jpg', 'โครงการสร้างทักษะก่อนฝึกงาน Smart Printer Technician')">
+              <img src="imagesactivity/activity-05/1.jpg" alt="โครงการสร้างทักษะก่อนฝึกงาน" loading="lazy" />
+              <div class="hg-overlay">
+                <span>🔍 ขยายภาพ</span>
+                <p>โครงการพัฒนาทักษะวิชาชีพ</p>
+              </div>
+            </div>
+            <div class="home-gallery-item" onclick="openModal('imagesactivity/activity-08/1.jpg', 'กิจกรรมการเข้าแถวเคารพธงชาติและตรวจระเบียบวินัยนักเรียนนักศึกษา')">
+              <img src="imagesactivity/activity-08/1.jpg" alt="กิจกรรมการเข้าแถวเคารพธงชาติ" loading="lazy" />
+              <div class="hg-overlay">
+                <span>🔍 ขยายภาพ</span>
+                <p>การเข้าแถวเคารพธงชาติและวินัย</p>
+              </div>
+            </div>
+            <div class="home-gallery-item" onclick="openModal('imagesactivity/activity-10/2.jpg', 'กิจกรรมจิตอาสาและพัฒนาห้องปฏิบัติการ แผนกวิชาเทคโนโลยีคอมพิวเตอร์')">
+              <img src="imagesactivity/activity-10/2.jpg" alt="กิจกรรมจิตอาสาและพัฒนาห้องปฏิบัติการ" loading="lazy" />
+              <div class="hg-overlay">
+                <span>🔍 ขยายภาพ</span>
+                <p>จิตอาสาและพัฒนาห้องปฏิบัติการ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. ข้อมูลสถานศึกษาและมหาวิทยาลัย (Dual Location Cards) -->
+      <div class="home-block">
+        <div class="sec-header">
+          <div class="ico">📍</div>
+          <h2>ข้อมูลสถานศึกษาและมหาวิทยาลัย</h2>
+        </div>
+        <div class="dual-location-grid">
+          <div class="location-card school">
+            <div class="location-card-header">
+              <span>🏫</span>
+              <span>สถานฝึกสอน (สถานที่ปฏิบัติการสอน)</span>
+            </div>
+            <div class="location-card-body">
+              <div class="loc-row">
+                <span class="loc-lbl">ตั้งอยู่ใน:</span>
+                <span class="loc-val"><strong>วิทยาลัยเทคนิคลพบุรี (Lopburi Technical College)</strong><br><small style="color: var(--gray-500);">สถาบันการอาชีวศึกษาภาคกลาง 2</small></span>
+              </div>
+              <div class="loc-row">
+                <span class="loc-lbl">ที่อยู่:</span>
+                <span class="loc-val">เลขที่ 323 ถนนนารายณ์มหาราช ต.ทะเลชุบศร อ.เมือง จ.ลพบุรี 15000</span>
+              </div>
+              <div class="loc-row">
+                <span class="loc-lbl">โทรศัพท์:</span>
+                <span class="loc-val"><a href="tel:036411042" style="color: inherit; text-decoration: none;">036 411 042</a> / <a href="tel:036411088" style="color: inherit; text-decoration: none;">036 411 088</a></span>
+              </div>
+              <div class="loc-row">
+                <span class="loc-lbl">เวลาทำการ:</span>
+                <span class="loc-val"><span class="loc-hours">🟢 เปิด ⋅ ปิด 16:30 น. (จันทร์ – ศุกร์)</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-card kmutnb">
+            <div class="location-card-header">
+              <span>🎓</span>
+              <span>สถาบันการศึกษาต้นสังกัด</span>
+            </div>
+            <div class="location-card-body">
+              <div class="loc-row">
+                <span class="loc-lbl">ตั้งอยู่ใน:</span>
+                <span class="loc-val"><strong>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (KMUTNB)</strong><br><small style="color: var(--gray-500);">คณะครุศาสตร์อุตสาหกรรม · ภาควิชาคอมพิวเตอร์ศึกษา</small></span>
+              </div>
+              <div class="loc-row">
+                <span class="loc-lbl">ที่อยู่:</span>
+                <span class="loc-val">1518 ถนนประชาราษฎร์ 1 แขวงวงศ์สว่าง เขตบางซื่อ กรุงเทพมหานคร 10800</span>
+              </div>
+              <div class="loc-row">
+                <span class="loc-lbl">โทรศัพท์:</span>
+                <span class="loc-val"><a href="tel:025552000" style="color: inherit; text-decoration: none;">02 555 2000</a> ต่อ 3234 (ภาควิชาคอมพิวเตอร์ศึกษา)</span>
+              </div>
+              <div class="loc-row">
+                <span class="loc-lbl">เวลาทำการ:</span>
+                <span class="loc-val"><span class="loc-hours">🟢 เปิด ⋅ ปิด 16:30 น. (จันทร์ – ศุกร์)</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. แผนที่สถานฝึกสอน (Interactive Google Map) -->
+      <div class="home-block">
+        <div class="sec-header">
+          <div class="ico">🗺️</div>
+          <h2>แผนที่สถานฝึกสอน</h2>
+        </div>
+        <div class="map-frame-card">
+          <iframe 
+            src="https://maps.google.com/maps?q=%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B9%80%E0%B8%97%E0%B8%82%E0%B8%99%E0%B8%B4%E0%B8%84%E0%B8%A5%E0%B8%9E%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5&hl=th&z=17&output=embed" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="แผนที่วิทยาลัยเทคนิคลพบุรี">
+          </iframe>
+          <div style="padding: 10px 16px; background: #f8fafc; border-top: 1px solid var(--gray-200); display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 8px;">
+            <span style="color: var(--gray-600);"><strong style="color: var(--red);">📍 พิกัด:</strong> 14.80125, 100.61992 (Plus Code: RJ29+GX)</span>
+            <a href="https://maps.google.com/?q=%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B9%80%E0%B8%97%E0%B8%82%E0%B8%99%E0%B8%B4%E0%B8%84%E0%B8%A5%E0%B8%9E%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5" target="_blank" rel="noopener" style="color: var(--blue, #2563eb); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 4px;">
+              <span>เปิดใน Google Maps</span> ↗
+            </a>
+          </div>
         </div>
       </div>
     </section>
